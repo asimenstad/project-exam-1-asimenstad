@@ -19,6 +19,12 @@ li {
   list-style: none;
 }
 
+/* Hover */
+
+li a:hover {
+  font-weight: 700;
+}
+
 /* Nav */
 
 header {
@@ -62,6 +68,10 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.active {
+  font-weight: 700;
 }
 
 .open {
