@@ -7,7 +7,7 @@
     <meta name="description" content="Delicious and flavourful recipes that are simple and easy to make." />
     <script src="https://kit.fontawesome.com/0c995894a1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/media.css" />
     <title>Home | Miso Hungry</title>
   </head>
@@ -28,7 +28,20 @@
       </nav>
     </header>
     <main>
-      <section class="new-recipes"></section>
+      <h1>Welcome to Miso Hungry</h1>
+      <section class="new-recipes">
+        <h2>New recipes</h2>
+        <div class="carousel-nav">
+          <button><i class="fa-solid fa-arrow-left previous-slide"></i></button>
+          <div class="circles">
+            <i class="fa-solid fa-circle circle one"></i>
+            <i class="fa-solid fa-circle circle two"></i>
+            <i class="fa-solid fa-circle circle three"></i>
+          </div>
+          <button><i class="fa-solid fa-arrow-right next-slide"></i></button>
+        </div>
+        <div class="new-recipes-container"></div>
+      </section>
       <section class="weekly-recipes"></section>
       <section class="popular-recipes"></section>
     </main>
@@ -42,12 +55,12 @@
           <button class="cta">Subscribe</button>
         </form>
       </section>
-      <section class="copyright"><p>&copy 2022 Miso Hungry</p></section>
       <section class="social-media">
         <a href="facebook.com"><i class="fa-brands fa-facebook-square"></i></a>
         <a href="instagram.com"><i class="fa-brands fa-instagram"></i></a>
         <a href="twitter.com"><i class="fa-brands fa-twitter-square"></i></a>
       </section>
+      <section class="copyright"><p>&copy 2022 Miso Hungry</p></section>
     </footer>
     <script src="js/nav.js"></script>
   </body>

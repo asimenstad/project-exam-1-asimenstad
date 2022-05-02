@@ -1,0 +1,50 @@
+h1 {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.new-recipes-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previous-slide,
+.next-slide {
+  font-size: 25px;
+  transition: 0.2s ease-in-out;
+}
+
+.previous-slide:hover,
+.next-slide:hover {
+  color: var(--gray);
+}
+
+.previous-slide {
+  display: none;
+}
+
+.circles {
+  display: flex;
+  gap: 10px;
+  color: var(--light-gray);
+}
+
+.circle {
+  font-size: 15px;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.circle:hover {
+  color: #000;
+}
