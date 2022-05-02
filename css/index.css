@@ -7,6 +7,10 @@ h1 {
   width: 1px;
 }
 
+.new-recipes {
+  max-width: 1000px;
+  margin: auto;
+}
 .new-recipes-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
