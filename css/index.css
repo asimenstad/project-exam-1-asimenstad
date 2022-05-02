@@ -34,7 +34,7 @@ h1 {
 }
 
 .previous-slide {
-  display: none;
+  visibility: hidden;
 }
 
 .circles {
