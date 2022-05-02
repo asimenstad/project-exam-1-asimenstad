@@ -36,6 +36,10 @@ p {
   line-height: 1.5rem;
 }
 
+img {
+  width: 100%;
+}
+
 /* Hover */
 
 li a:hover {
@@ -107,21 +111,26 @@ input,
 textarea,
 .cta {
   padding: 5px;
-  border: 1px solid #000;
   border-radius: 2px;
 }
 
+input,
+textarea {
+  border: 1px solid #000;
+}
+
 .cta {
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
   text-transform: uppercase;
   padding-inline: 50px;
   cursor: pointer;
   transition: 0.2s;
+  border: none;
 }
 
 .cta:hover {
-  background-color: #000;
-  color: var(--beige);
+  background-color: var(--gray);
   transition: 0.2s;
 }
 
@@ -138,12 +147,18 @@ footer {
   background-color: var(--beige);
 }
 
-.social-media__icons {
+.social-media {
   display: flex;
   gap: 20px;
   padding-top: 10px;
 }
 
-.social-media__icons i {
+.social-media i {
   font-size: 35px;
+  transition: 0.2s;
+}
+
+.social-media i:hover {
+  color: var(--gray);
+  transition: 0.2s;
 }
