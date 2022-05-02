@@ -13,14 +13,16 @@
   </head>
   <body>
     <header>
-      <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo" class="logo-icon" /> Miso Hungry</a>
-      <button class="menu-button">
-        <i class="fa-solid fa-bars open-menu"></i><i class="fa-solid fa-xmark close-menu"></i>
-      </button>
+      <div class="header-mobile">
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo" class="logo-icon" /> Miso Hungry</a>
+        <button class="menu-button">
+          <i class="fa-solid fa-bars open-menu"></i><i class="fa-solid fa-xmark close-menu"></i>
+        </button>
+      </div>
       <nav>
         <ul class="menu">
           <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -31,9 +33,17 @@
         <div class="about-text"></div>
         <div class="about-image"></div>
       </section>
-      <section class="newsletter"></section>
     </main>
     <footer>
+      <section class="newsletter">
+        <h2>Hungry for more?</h2>
+        <p>Subscribe to our newsletter for weekly recipes and news.</p>
+        <form action="#" class="newsletter-form">
+          <label for="newsletter-email">Email address</label>
+          <input type="email" name="newsletter-email" id="newsletter-email" placeholder="example@email.com" />
+          <button class="cta">Subscribe</button>
+        </form>
+      </section>
       <section class="copyright"><p>&copy 2022 Miso Hungry</p></section>
       <section class="social-media">
         <a href="facebook.com"><i class="fa-brands fa-facebook-square"></i></a>
