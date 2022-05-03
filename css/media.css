@@ -22,6 +22,15 @@
   .menu {
     flex-direction: row;
   }
+
+  .recipes-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .recipes-nav {
+    flex-direction: row;
+  }
+
   footer,
   .newsletter-form {
     flex-direction: row;

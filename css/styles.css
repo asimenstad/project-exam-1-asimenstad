@@ -43,6 +43,11 @@ h3 {
   font-weight: 400;
 }
 
+h4 {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
 p {
   max-width: 500px;
   line-height: 1.5rem;
@@ -123,6 +128,40 @@ nav {
 main {
   min-height: 80vh;
   padding: 50px 20px;
+}
+
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe:hover > .recipe-title {
+  text-decoration: underline;
+}
+
+.recipe:hover > .recipe-image {
+  opacity: 0.8;
+}
+
+.recipe-image {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  order: 1;
+}
+.recipe-title {
+  order: 2;
+}
+
+.recipe-category {
+  order: 3;
+  color: var(--gray);
 }
 
 /* Form and CTA*/

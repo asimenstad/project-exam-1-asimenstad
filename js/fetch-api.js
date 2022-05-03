@@ -6,9 +6,9 @@ async function fetchAPI() {
     const response = await fetch(recipesUrl);
     const json = await response.json();
     createCarousel(json);
+    addRecipes(json);
   } catch (error) {
     console.log(error);
   }
 }
-
 fetchAPI();

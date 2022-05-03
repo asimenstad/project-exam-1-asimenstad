@@ -1,0 +1,19 @@
+.recipes-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.recipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.more-recipes {
+  max-width: 250px;
+  margin-top: 30px;
+}
