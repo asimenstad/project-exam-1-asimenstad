@@ -10,7 +10,9 @@ h1 {
 .new-recipes {
   max-width: 1200px;
   margin: auto;
+  overflow: hidden;
 }
+
 .new-recipes-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
