@@ -15,7 +15,9 @@ h1 {
 
 .new-recipes-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .carousel-nav {
@@ -53,4 +55,18 @@ h1 {
 
 .circle:hover {
   color: #000;
+}
+
+.carousel-slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-image {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  order: 1;
+}
+.carousel-slide h3 {
+  order: 2;
 }
