@@ -14,10 +14,15 @@ h1 {
 }
 
 .new-recipes-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 10px;
   margin-top: 10px;
+}
+
+.recipe {
+  height: 100%;
+  width: 300px;
+  transition: 0.2s ease-in-out;
 }
 
 .carousel-nav {

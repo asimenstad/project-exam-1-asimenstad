@@ -1,8 +1,8 @@
 const recipesUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes?acf_format=standard&per_page=100&orderby=date";
 const newRecipes = document.querySelector(".new-recipes-container");
-const previousSlide = document.querySelector(".previous-slide");
-const nextSlide = document.querySelector(".next-slide");
+const previousSlideButton = document.querySelector(".previous-slide");
+const nextSlideButton = document.querySelector(".next-slide");
 
 async function fetchAPI() {
   try {
@@ -17,7 +17,7 @@ fetchAPI();
 
 function createCarousel(recipes) {
   for (let i = 0; i < recipes.length; i++) {
-    if (i === 3) {
+    if (i === 9) {
       break;
     }
 
@@ -27,15 +27,27 @@ function createCarousel(recipes) {
           <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
               </div></a>`;
 
-    const allSlides = document.querySelectorAll(".recipe");
-    const slide = document.querySelector(".recipe");
-    const slideWidth = allSlides[0].getBoundingClientRect().width + 10;
-    nextSlide.addEventListener("click", moveSlide);
+    const firstSlide = newRecipes.firstChild;
+    firstSlide.classList.add(".active-slide");
+    console.log(firstSlide);
 
-    function moveSlide() {
-      console.log("moved");
+    const allSlides = document.querySelectorAll(".recipe");
+    const slideWidth = allSlides[0].getBoundingClientRect().width + 10;
+
+    nextSlideButton.addEventListener("click", nextSlide);
+
+    function nextSlide() {
+      previousSlideButton.style.visibility = "visible";
       for (i = 0; i < allSlides.length; i++) {
-        allSlides[i].style.transform = `translateX(-${slideWidth}px)`;
+        allSlides[i].style.transform += `translateX(-${slideWidth}px)`;
+      }
+    }
+
+    previousSlideButton.addEventListener("click", previousSlide);
+
+    function previousSlide() {
+      for (i = 0; i < allSlides.length; i++) {
+        allSlides[i].style.transform += `translateX(${slideWidth}px)`;
       }
     }
   }
