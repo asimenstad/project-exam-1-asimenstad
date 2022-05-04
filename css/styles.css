@@ -57,7 +57,7 @@ img {
   width: 100%;
 }
 
-.active,
+nav .active,
 li a:hover {
   font-weight: 700;
 }
