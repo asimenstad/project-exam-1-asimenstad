@@ -41,22 +41,6 @@ function addRecipes(recipes) {
           <h4 class="recipe-category">${recipes[i].acf.category}</h4>
               <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
                   </div></a>`;
-
-    moreRecipes.addEventListener("click", loadMore);
-
-    function loadMore() {
-      for (let i = 0; i < recipes.length; i++) {
-        if (i < 10) {
-          continue;
-        }
-
-        recipesContainer.innerHTML += `<a href="#"><div class="recipe">
-  <h3 class="recipe-title">${recipes[i].acf.title}</h3>
-  <h4 class="recipe-category">${recipes[i].acf.category}</h4>
-      <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
-          </div></a>`;
-      }
-    }
   }
 }
 
