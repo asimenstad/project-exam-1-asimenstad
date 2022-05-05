@@ -3,11 +3,13 @@ const recipesUrl =
 const recipesContainer = document.querySelector(".recipes-container");
 const moreRecipes = document.querySelector(".more-recipes");
 
+let recipes = [];
+
 async function fetchAPI() {
   try {
     const response = await fetch(recipesUrl);
-    const json = await response.json();
-    addRecipes(json);
+    recipes = await response.json();
+    addRecipes(recipes);
   } catch (error) {
     console.log(error);
   }
@@ -19,10 +21,32 @@ function addRecipes(recipes) {
     if (i === 10) {
       break;
     }
+
+    if (recipes.length > 10) {
+      moreRecipes.style.display = "block";
+    }
     recipesContainer.innerHTML += `<a href="#"><div class="recipe">
           <h3 class="recipe-title">${recipes[i].acf.title}</h3>
           <h4 class="recipe-category">${recipes[i].acf.category}</h4>
               <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
                   </div></a>`;
+  }
+}
+
+moreRecipes.addEventListener("click", loadMore);
+
+function loadMore() {
+  for (let i = 0; i < recipes.length; i++) {
+    if (i < 10) {
+      continue;
+    }
+
+    recipesContainer.innerHTML += `<a href="#"><div class="recipe">
+                <h3 class="recipe-title">${recipes[i].acf.title}</h3>
+                <h4 class="recipe-category">${recipes[i].acf.category}</h4>
+                    <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
+                        </div></a>`;
+
+    moreRecipes.style.display = "none";
   }
 }
