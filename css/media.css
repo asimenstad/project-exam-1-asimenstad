@@ -1,3 +1,9 @@
+@media screen and (min-width: 600px) {
+  .recipes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (min-width: 700px) {
   header {
     flex-wrap: nowrap;
@@ -41,5 +47,9 @@
   .about-container {
     flex-direction: row;
     margin-top: 50px;
+  }
+
+  .recipes-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
