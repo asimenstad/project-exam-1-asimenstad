@@ -1,5 +1,8 @@
 const recipesUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes?acf_format=standard&per_page=100&orderby=date";
+
+const loader = document.querySelector(".loader");
+
 const recipesContainer = document.querySelector(".recipes-container");
 
 const categoryAll = document.querySelector(".all");
@@ -30,6 +33,8 @@ function addRecipes(recipes) {
     if (i === 10) {
       break;
     }
+
+    loader.style.display = "none";
 
     if (recipes.length > 10) {
       moreRecipes.style.display = "block";

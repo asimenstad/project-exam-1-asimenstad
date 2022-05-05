@@ -1,6 +1,8 @@
 const recipesUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes?acf_format=standard&per_page=100&orderby=date";
 
+const loader = document.querySelector(".loader");
+
 const newRecipes = document.querySelector(".new-recipes-container");
 const previousSlideButton = document.querySelector(".previous-slide");
 const nextSlideButton = document.querySelector(".next-slide");
@@ -25,6 +27,8 @@ function createCarousel(recipes) {
     if (i === 9) {
       break;
     }
+
+    loader.style.display = "none";
 
     newRecipes.innerHTML += `<a href="#"><div class="recipe">
       <h3 class="recipe-title">${recipes[i].acf.title}</h3>
