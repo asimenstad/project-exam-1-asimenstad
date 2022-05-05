@@ -7,6 +7,11 @@ h1 {
   width: 1px;
 }
 
+/* New recipes carousel */
+.new-recipes h2 {
+  margin-bottom: 0;
+}
+
 .new-recipes {
   max-width: 1200px;
   margin: auto;
@@ -49,4 +54,46 @@ h1 {
 
 .previous-slide {
   visibility: hidden;
+}
+
+/* Weekly recipe */
+.weekly-recipe {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--beige);
+  padding: 40px 20px;
+  margin: 40px -20px 0 -20px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.weekly-recipe-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weekly-recipe h2 {
+  font-family: "Karla", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--gray);
+  text-transform: none;
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.weekly-recipe h3 {
+  font-size: 2.2rem;
+}
+
+.weekly-recipe p {
+  margin-block: 5px;
+}
+
+.weekly-recipe button {
+  max-width: 200px;
+}
+
+.weekly-recipe-img {
+  max-width: 500px;
 }

@@ -7,6 +7,11 @@
   margin-bottom: 20px;
 }
 
+.recipes-nav li {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
 .recipes {
   display: flex;
   flex-direction: column;

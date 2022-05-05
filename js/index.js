@@ -1,20 +1,25 @@
 const recipesUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes?acf_format=standard&per_page=100&orderby=date";
+
 const newRecipes = document.querySelector(".new-recipes-container");
 const previousSlideButton = document.querySelector(".previous-slide");
 const nextSlideButton = document.querySelector(".next-slide");
+
+const weeklyRecipe = document.querySelector(".weekly-recipe");
 
 async function fetchAPI() {
   try {
     const response = await fetch(recipesUrl);
     const json = await response.json();
     createCarousel(json);
+    createWeeklyRecipe(json);
   } catch (error) {
     console.log(error);
   }
 }
 fetchAPI();
 
+/// New recipes carousel
 function createCarousel(recipes) {
   for (let i = 0; i < recipes.length; i++) {
     if (i === 9) {
@@ -49,6 +54,28 @@ function createCarousel(recipes) {
       for (i = 0; i < allSlides.length; i++) {
         allSlides[i].style.transform += `translateX(${slideWidth}px)`;
       }
+    }
+  }
+}
+
+/// Weekly recipe
+
+function createWeeklyRecipe(recipes) {
+  for (let i = 0; i < recipes.length; i++) {
+    if (recipes.length < 1) {
+      break;
+    }
+    console.log(recipes[i]);
+    if (recipes[i].acf.featured) {
+      weeklyRecipe.innerHTML = `<div class="weekly-recipe-info">
+      <h2>Recipe of the week</h2>
+      <h3>${recipes[i].acf.title}</h3>
+      <p>${recipes[i].excerpt.rendered}</p>
+      <button class="cta">View recipe</button>
+      </div>
+      <div class="weekly-recipe-img">
+      <img src="${recipes[i].acf.image}">
+      </div>`;
     }
   }
 }

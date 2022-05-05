@@ -45,7 +45,7 @@ h3 {
 
 h4 {
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 p {
@@ -57,8 +57,9 @@ img {
   width: 100%;
 }
 
-nav .active,
-li a:hover {
+.active,
+li a:hover,
+.recipes-nav li:hover {
   font-weight: 700;
 }
 
