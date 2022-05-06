@@ -41,7 +41,7 @@ function addRecipes(recipes) {
     } else {
       moreRecipes.style.display = "none";
     }
-    recipesContainer.innerHTML += `<a href="#"><div class="recipe">
+    recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
           <h3 class="recipe-title">${recipes[i].acf.title}</h3>
           <h4 class="recipe-category">${recipes[i].acf.category}</h4>
               <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
@@ -65,7 +65,7 @@ function addBreakfast() {
     }
 
     if (recipes[i].acf.category === "breakfast") {
-      recipesContainer.innerHTML += `<a href="#"><div class="recipe">
+      recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
         <h3 class="recipe-title">${recipes[i].acf.title}</h3>
         <h4 class="recipe-category">${recipes[i].acf.category}</h4>
             <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
@@ -84,7 +84,7 @@ function loadMore() {
       continue;
     }
 
-    recipesContainer.innerHTML += `<a href="#"><div class="recipe">
+    recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
                 <h3 class="recipe-title">${recipes[i].acf.title}</h3>
                 <h4 class="recipe-category">${recipes[i].acf.category}</h4>
                     <img src="${recipes[i].acf.image}" alt"" class="recipe-image">

@@ -1,0 +1,59 @@
+h1,
+main h2 {
+  text-align: left;
+}
+
+main h2 {
+  font-size: 1.5rem;
+}
+
+.back-to-recipes i {
+  margin-right: 10px;
+}
+
+.back-to-recipes a:hover {
+  font-weight: 500;
+}
+
+.back-to-recipes,
+.specific-recipe {
+  max-width: 900px;
+  margin: auto;
+}
+
+.specific-recipe {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.specific-recipe__section {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 4;
+}
+
+.intro {
+  order: 1;
+}
+
+.img {
+  display: flex;
+  order: 2;
+}
+
+.ingredients {
+  order: 3;
+}
+
+.instructions {
+  order: 4;
+}
+
+.specific-img {
+  object-fit: cover;
+  aspect-ratio: 7 / 5;
+  max-width: 600px;
+}

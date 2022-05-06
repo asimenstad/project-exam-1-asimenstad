@@ -157,6 +157,7 @@ main {
   object-fit: cover;
   order: 1;
 }
+
 .recipe-title {
   order: 2;
 }

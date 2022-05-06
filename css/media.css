@@ -2,6 +2,14 @@
   .recipes-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .specific-recipe__section.ingredients {
+    grid-column: span 1;
+  }
+
+  .specific-recipe__section.instructions {
+    grid-column: span 3;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -43,6 +51,22 @@
   }
 }
 
+@media screen and (min-width: 800px) {
+  .specific-recipe__section.img,
+  .specific-recipe__section.intro {
+    grid-column: span 2;
+    align-self: center;
+  }
+
+  .specific-recipe__section.img {
+    order: 1;
+  }
+
+  .specific-recipe__section.intro {
+    order: 2;
+  }
+}
+
 @media screen and (min-width: 900px) {
   .weekly-recipe {
     flex-direction: row-reverse;
@@ -51,8 +75,12 @@
 
 @media screen and (min-width: 1000px) {
   .about-container {
-    flex-direction: row;
+    flex-direction: row-reverse;
     margin-top: 50px;
+  }
+
+  .about-text h2 {
+    text-align: left;
   }
 
   .recipes-container {

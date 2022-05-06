@@ -90,8 +90,8 @@ h1 {
   margin-block: 5px;
 }
 
-.weekly-recipe button {
-  max-width: 200px;
+.weekly-recipe a {
+  max-width: 100px;
 }
 
 .weekly-recipe-img {

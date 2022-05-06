@@ -30,7 +30,7 @@ function createCarousel(recipes) {
 
     loader.style.display = "none";
 
-    newRecipes.innerHTML += `<a href="#"><div class="recipe">
+    newRecipes.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
       <h3 class="recipe-title">${recipes[i].acf.title}</h3>
       <h4 class="recipe-category">${recipes[i].acf.category}</h4>
           <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
@@ -75,7 +75,7 @@ function createWeeklyRecipe(recipes) {
       <h2>Recipe of the week</h2>
       <h3>${recipes[i].acf.title}</h3>
       <p>${recipes[i].excerpt.rendered}</p>
-      <button class="cta">View recipe</button>
+      <a href="specific-recipe.html?id=${recipes[i].id}" class="cta">View recipe</a>
       </div>
       <div class="weekly-recipe-img">
       <img src="${recipes[i].acf.image}">
