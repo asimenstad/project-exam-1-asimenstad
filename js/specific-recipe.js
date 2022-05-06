@@ -6,13 +6,15 @@ const id = params.get("id");
 const recipeUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes/" + id + "?acf_format=standard&per_page=100";
 
+let recipe = [];
+
 const loader = document.querySelector(".loader");
+const modal = document.querySelector(".modal");
 
 async function fetchSpecificRecipe() {
   try {
     const response = await fetch(recipeUrl);
-    const recipe = await response.json();
-    console.log(recipe);
+    recipe = await response.json();
     createRecipeHTML(recipe);
   } catch (error) {
     console.log("error");
@@ -28,7 +30,6 @@ function createRecipeHTML(recipe) {
   const ingredientsText = recipe.acf.ingredients;
   const ingredientsList = ingredientsText.split("-");
   const ingredients = ingredientsList.join("<br>");
-  console.log(ingredients);
 
   const instructionsText = recipe.acf.instructions;
   const instructionsList = instructionsText.split("-");
@@ -42,4 +43,18 @@ function createRecipeHTML(recipe) {
   <h2>Ingredients</h2><p>${ingredients}</p></div>
   <div class="specific-recipe__section instructions">
   <h2>Instructions</h2><p>${instructions}</p></div> `;
+
+  const image = document.querySelector(".specific-recipe__section.img");
+  image.addEventListener("click", createModal);
+}
+
+function createModal() {
+  modal.style.display = "flex";
+  modal.innerHTML = `<div class="modal-image">
+  <img src="${recipe.acf.image}"></div>`;
+
+  modal.addEventListener("click", closeModal);
+}
+function closeModal() {
+  modal.style.display = "none";
 }
