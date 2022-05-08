@@ -1,20 +1,21 @@
 const recipesUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes?acf_format=standard&per_page=100&orderby=date";
 
-const loader = document.querySelector(".loader");
+let recipes = [];
+let slideCounter = 0;
 
+const loader = document.querySelector(".loader");
 const newRecipes = document.querySelector(".new-recipes-container");
 const previousSlideButton = document.querySelector(".previous-slide");
 const nextSlideButton = document.querySelector(".next-slide");
-
 const weeklyRecipe = document.querySelector(".weekly-recipe");
 
 async function fetchAPI() {
   try {
     const response = await fetch(recipesUrl);
-    const json = await response.json();
-    createCarousel(json);
-    createWeeklyRecipe(json);
+    recipes = await response.json();
+    createCarousel(recipes);
+    createWeeklyRecipe(recipes);
   } catch (error) {
     console.log(error);
   }
@@ -36,31 +37,46 @@ function createCarousel(recipes) {
           <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
               </div></a>`;
 
-    const firstSlide = newRecipes.firstChild;
-    firstSlide.classList.add(".active-slide");
-    console.log(firstSlide);
-
-    const allSlides = document.querySelectorAll(".recipe");
-    const slideWidth = allSlides[0].getBoundingClientRect().width + 10;
-
-    nextSlideButton.addEventListener("click", nextSlide);
-
-    function nextSlide() {
-      previousSlideButton.style.visibility = "visible";
-      for (i = 0; i < allSlides.length; i++) {
-        allSlides[i].style.transform += `translateX(-${slideWidth}px)`;
-      }
-    }
-
-    previousSlideButton.addEventListener("click", previousSlide);
-
-    function previousSlide() {
-      for (i = 0; i < allSlides.length; i++) {
-        allSlides[i].style.transform += `translateX(${slideWidth}px)`;
-      }
+    if (slideCounter >= 0) {
+      nextSlideButton.style.visibility = "visible";
     }
   }
 }
+
+function nextSlide() {
+  const slides = document.querySelectorAll(".recipe");
+  const slideWidth = slides[0].getBoundingClientRect().width + 10;
+
+  slideCounter++;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.transform += `translateX(-${slideWidth}px)`;
+    if (slideCounter > 0) {
+      previousSlideButton.style.visibility = "visible";
+    }
+    if (slideCounter > slides.length - 2) {
+      nextSlideButton.style.visibility = "hidden";
+    }
+  }
+}
+nextSlideButton.addEventListener("click", nextSlide);
+
+function previousSlide() {
+  const slides = document.querySelectorAll(".recipe");
+  const slideWidth = slides[0].getBoundingClientRect().width + 10;
+  slideCounter--;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.transform += `translateX(${slideWidth}px)`;
+    if (slideCounter === 0) {
+      previousSlideButton.style.visibility = "hidden";
+    }
+
+    if (slideCounter < slides.length) {
+      nextSlideButton.style.visibility = "visible";
+    }
+    console.log(slideCounter);
+  }
+}
+previousSlideButton.addEventListener("click", previousSlide);
 
 /// Weekly recipe
 
@@ -69,7 +85,6 @@ function createWeeklyRecipe(recipes) {
     if (recipes.length < 1) {
       break;
     }
-    console.log(recipes[i]);
     if (recipes[i].acf.featured) {
       weeklyRecipe.innerHTML = `<div class="weekly-recipe-info">
       <h2>Recipe of the week</h2>
