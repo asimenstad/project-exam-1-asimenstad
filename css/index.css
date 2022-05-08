@@ -27,8 +27,6 @@ h1 {
 .recipe {
   height: 100%;
   width: 300px;
-
-  transition: 0.2s ease-in-out;
 }
 
 .carousel-nav {

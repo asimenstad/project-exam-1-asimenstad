@@ -35,17 +35,33 @@
       <section>
         <p class="required">*Required</p>
         <form name="contact-form" method="post" netlify>
-          <div>
+          <div class="form-input">
             <label for="name">*Name (minimum 5 characters)</label>
-            <input type="text" id="name" name="name" class="form-input" />
-            <label for="name">*Email</label>
-            <input type="email" id="email" name="email" class="form-input" />
-            <label for="name">*Subject (minimum 15 characters)</label>
-            <input type="text" id="subject" name="subject" class="form-input" />
+            <input type="text" id="name" name="name" required />
+            <i class="fas fa-check valid-input" id="valid-name"></i>
+            <i class="fas fa-exclamation invalid-input" id="invalid-name"></i>
+            <p class="error-input" id="error-name">Please enter your name</p>
           </div>
-          <div>
+          <div class="form-input">
+            <label for="name">*Email</label>
+            <input type="email" id="email" name="email" required />
+            <i class="fas fa-check valid-input" id="valid-email"></i>
+            <i class="fas fa-exclamation invalid-input" id="invalid-email"></i>
+            <p class="error-input" id="error-email">Please enter a valid email</p>
+          </div>
+          <div class="form-input">
+            <label for="name">*Subject (minimum 15 characters)</label>
+            <input type="text" id="subject" name="subject" required />
+            <i class="fas fa-check valid-input" id="valid-subject"></i>
+            <i class="fas fa-exclamation invalid-input" id="invalid-subject"></i>
+            <p class="error-input" id="error-subject">Please enter a subject</p>
+          </div>
+          <div class="form-input">
             <label for="message">*Message (minimum 25 characters)</label>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+            <i class="fas fa-check valid-input" id="valid-message"></i>
+            <i class="fas fa-exclamation invalid-input" id="invalid-message"></i>
+            <p class="error-input" id="error-message">Please enter a message</p>
           </div>
           <button class="cta">Send</button>
         </form>
@@ -70,5 +86,6 @@
       <section class="copyright"><p>&copy 2022 Miso Hungry</p></section>
     </footer>
     <script src="js/nav.js"></script>
+    <script src="js/validate-form.js"></script>
   </body>
 </html>

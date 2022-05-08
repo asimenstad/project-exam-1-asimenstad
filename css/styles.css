@@ -142,6 +142,7 @@ main {
 .recipe {
   display: flex;
   flex-direction: column;
+  transition: 0.2s ease-in-out;
 }
 
 .recipe:hover > .recipe-title {
@@ -235,9 +236,20 @@ textarea,
 
 /* Footer */
 
-.newsletter {
+footer,
+.newsletter,
+.newsletter-form,
+.social-media {
   display: flex;
+}
+
+footer,
+.newsletter,
+.newsletter-form {
   flex-direction: column;
+}
+
+.newsletter {
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -252,8 +264,6 @@ textarea,
 }
 
 .newsletter-form {
-  display: flex;
-  flex-direction: column;
   gap: 10px;
 }
 
@@ -267,9 +277,7 @@ textarea,
 }
 
 footer {
-  display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
@@ -278,7 +286,6 @@ footer {
 }
 
 .social-media {
-  display: flex;
   gap: 20px;
   padding-top: 10px;
 }

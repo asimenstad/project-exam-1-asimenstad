@@ -1,21 +1,22 @@
-main form {
+main form,
+.form-input {
   display: flex;
   flex-direction: column;
-  width: 100%;
+}
+
+main form {
+  gap: 20px;
   align-items: center;
 }
 
-form div {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 100%;
+.form-input {
   max-width: 500px;
 }
 
+main form,
+form div,
 main input,
 main textarea {
-  margin-bottom: 15px;
   width: 100%;
 }
 
@@ -23,5 +24,28 @@ main textarea {
   max-width: 500px;
   margin: auto;
   margin-bottom: 20px;
+}
+
+.required,
+.error-input,
+.valid-input,
+.invalid-input {
   color: var(--gray);
+}
+
+.form-input {
+  position: relative;
+}
+
+.valid-input,
+.invalid-input {
+  position: absolute;
+  right: 0;
+  padding-top: 25px;
+}
+
+.error-input,
+.invalid-input,
+.valid-input {
+  display: none;
 }
