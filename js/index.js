@@ -53,9 +53,10 @@ function nextSlide() {
     if (slideCounter > 0) {
       previousSlideButton.style.visibility = "visible";
     }
-    if (slideCounter > slides.length - 2) {
+    if (slideCounter >= slides.length - 1) {
       nextSlideButton.style.visibility = "hidden";
     }
+    console.log(slideCounter);
   }
 }
 nextSlideButton.addEventListener("click", nextSlide);
