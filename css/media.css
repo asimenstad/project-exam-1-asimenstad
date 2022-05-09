@@ -65,6 +65,21 @@
   .specific-recipe__section.intro {
     order: 2;
   }
+
+  .comment-form form {
+    flex-direction: row;
+    gap: 0 20px;
+    flex-wrap: wrap;
+  }
+  .comment-form textarea {
+    height: 100%;
+  }
+
+  .comment-form__content,
+  .comments,
+  .required {
+    max-width: 900px;
+  }
 }
 
 @media screen and (min-width: 900px) {

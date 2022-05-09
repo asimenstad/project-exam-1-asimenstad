@@ -36,10 +36,6 @@ function createCarousel(recipes) {
       <h4 class="recipe-category">${recipes[i].acf.category}</h4>
           <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
               </div></a>`;
-
-    if (slideCounter >= 0) {
-      nextSlideButton.style.visibility = "visible";
-    }
   }
 }
 

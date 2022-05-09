@@ -43,12 +43,15 @@ h1 {
 .next-slide {
   font-size: 25px;
   transition: 0.2s ease-in-out;
-  visibility: hidden;
 }
 
 .previous-slide:hover,
 .next-slide:hover {
   color: var(--gray);
+}
+
+.previous-slide {
+  visibility: hidden;
 }
 
 /* Weekly recipe */

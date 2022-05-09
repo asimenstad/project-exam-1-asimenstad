@@ -89,3 +89,41 @@ main h2 {
   object-fit: cover;
   aspect-ratio: 7 / 5;
 }
+
+/* Comment section */
+.comment-section {
+  margin: 50px -20px;
+}
+
+.comment-form__content,
+.comments {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.comment-form {
+  background-color: var(--beige);
+  width: 100%;
+}
+
+.comment-form form,
+.comment-form form div {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.comment-form input,
+textarea {
+  margin-bottom: 20px;
+}
+
+.comment-form .cta {
+  max-width: 150px;
+  align-self: flex-end;
+}
+
+.form-submit {
+  width: 100%;
+}

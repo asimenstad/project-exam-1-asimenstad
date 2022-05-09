@@ -169,6 +169,13 @@ main {
   text-transform: capitalize;
 }
 
+.required {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 20px;
+  color: var(--gray);
+}
+
 /* API Loader */
 .loader {
   width: 100%;
@@ -206,7 +213,7 @@ main {
   }
 }
 
-/* Form and CTA*/
+/* Form and CTA */
 button {
   cursor: pointer;
   background-color: #fff;
