@@ -77,7 +77,7 @@
 
   .comment-form__content,
   .comments,
-  .required {
+  .comment-form__content .required {
     max-width: 900px;
   }
 }

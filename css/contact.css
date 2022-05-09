@@ -20,13 +20,6 @@ main textarea {
   width: 100%;
 }
 
-.required {
-  max-width: 500px;
-  margin: auto;
-  margin-bottom: 20px;
-}
-
-.required,
 .error-input,
 .valid-input,
 .invalid-input {
