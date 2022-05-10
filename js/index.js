@@ -34,7 +34,7 @@ function createCarousel(recipes) {
     newRecipes.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
       <h3 class="recipe-title">${recipes[i].acf.title}</h3>
       <h4 class="recipe-category">${recipes[i].acf.category}</h4>
-          <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
+          <img src="${recipes[i].acf.image}" alt="${recipes[i].acf.alt}" class="recipe-image">
               </div></a>`;
   }
 }
@@ -90,7 +90,7 @@ function createWeeklyRecipe(recipes) {
       <a href="specific-recipe.html?id=${recipes[i].id}" class="cta">View recipe</a>
       </div>
       <div class="weekly-recipe-img">
-      <img src="${recipes[i].acf.image}">
+      <img src="${recipes[i].acf.image}" alt="${recipes[i].acf.alt}">
       </div>`;
     }
   }

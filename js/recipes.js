@@ -33,7 +33,6 @@ function addRecipes(recipes) {
     if (i === 10) {
       break;
     }
-
     loader.style.display = "none";
 
     if (recipes.length > 10) {
@@ -41,10 +40,12 @@ function addRecipes(recipes) {
     } else {
       moreRecipes.style.display = "none";
     }
+
+    console.log(recipes[i].acf);
     recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
           <h3 class="recipe-title">${recipes[i].acf.title}</h3>
           <h4 class="recipe-category">${recipes[i].acf.category}</h4>
-              <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
+              <img src="${recipes[i].acf.image}" alt="${recipes[i].acf.alt}" class="recipe-image">
                   </div></a>`;
   }
 }

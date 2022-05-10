@@ -36,7 +36,7 @@ function createRecipeHTML(recipe) {
   const instructions = instructionsList.join("<br>");
 
   specificRecipe.innerHTML += `<div class="specific-recipe__section img">
-  <img class="specific-img" src="${recipe.acf.image}"></div>
+  <img class="specific-img" src="${recipe.acf.image}" alt="${recipe.acf.alt}"></div>
   <div class="specific-recipe__section intro">
   <h1>${recipe.acf.title}</h1><p>${recipe.acf.text}</p></div>
   <div class="specific-recipe__section ingredients">
