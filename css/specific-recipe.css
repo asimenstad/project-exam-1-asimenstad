@@ -127,3 +127,22 @@ textarea {
 .form-submit {
   width: 100%;
 }
+
+.comment-author {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.comment-specific h3 {
+  font-family: "Karla", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+
+.comment-date {
+  color: var(--gray);
+}
+
+.comment-specific p,
+hr {
+  margin-bottom: 10px;
+}

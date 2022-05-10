@@ -43,25 +43,27 @@
           <div class="comment-form__content">
             <h2>Leave a comment!</h2>
             <p class="required">*Required</p>
-            <form>
+            <form id="post-comment-form">
+              <input type="hidden" id="commentId" />
               <div>
                 <label for="comment-name">*Name</label>
-                <input type="text" id="comment-name" name="comment-name" required />
+                <input type="text" id="commentName" name="comment-name" required />
                 <label for="comment-email">*Email</label>
-                <input type="text" id="comment-email" name="comment-email" required />
+                <input type="text" id="commentEmail" name="comment-email" required />
               </div>
               <div>
                 <label for="comment">*Comment</label>
                 <textarea name="comment" id="comment" required></textarea>
               </div>
               <div class="form-submit">
-                <button class="cta">Send</button>
+                <button class="cta" id="post-comment">Post</button>
               </div>
             </form>
           </div>
         </section>
         <section class="comments">
           <h2>Comments</h2>
+          <div class="comments-container"></div>
         </section>
       </section>
     </main>
@@ -84,5 +86,6 @@
     </footer>
     <script src="js/nav.js"></script>
     <script src="js/specific-recipe.js"></script>
+    <script src="js/comments.js"></script>
   </body>
 </html>
