@@ -29,6 +29,7 @@ function addComment(e) {
       if (response.ok === true) {
       }
       commentForm.reset();
+      window.location.reload();
       return response.json();
     })
     .then((object) => {})
@@ -41,7 +42,6 @@ async function fetchComments() {
   try {
     const response = await fetch(specificCommentsUrl);
     const comments = await response.json();
-    console.log(comments);
     displayComments(comments);
   } catch (error) {
     console.log("Error:", error);
