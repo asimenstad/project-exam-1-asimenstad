@@ -29,7 +29,6 @@ function addComment(e) {
       if (response.ok === true) {
       }
       commentForm.reset();
-      window.location.reload();
       return response.json();
     })
     .then((object) => {})
