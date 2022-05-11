@@ -27,6 +27,9 @@ async function fetchAPI() {
 }
 fetchAPI();
 
+/// HTML
+function createHtml() {}
+
 /// Add all recipes
 function addRecipes(recipes) {
   for (let i = 0; i < recipes.length; i++) {
@@ -41,7 +44,6 @@ function addRecipes(recipes) {
       moreRecipes.style.display = "none";
     }
 
-    console.log(recipes[i].acf);
     recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
           <h3 class="recipe-title">${recipes[i].acf.title}</h3>
           <h4 class="recipe-category">${recipes[i].acf.category}</h4>
