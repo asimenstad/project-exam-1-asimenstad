@@ -9,6 +9,8 @@ const newRecipes = document.querySelector(".new-recipes-container");
 const previousSlideButton = document.querySelector(".previous-slide");
 const nextSlideButton = document.querySelector(".next-slide");
 const weeklyRecipe = document.querySelector(".weekly-recipe");
+const newRecipesWidth = newRecipes.getBoundingClientRect().width;
+console.log(newRecipesWidth);
 
 async function fetchAPI() {
   try {
@@ -41,15 +43,28 @@ function createCarousel(recipes) {
 
 function nextSlide() {
   const slides = document.querySelectorAll(".recipe");
-  const slideWidth = slides[0].getBoundingClientRect().width + 10;
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  console.log(slideWidth);
 
   slideCounter++;
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.transform += `translateX(-${slideWidth}px)`;
+    slides[i].style.transform += `translateX(-${slideWidth + 10}px)`;
     if (slideCounter > 0) {
       previousSlideButton.style.visibility = "visible";
     }
-    if (slideCounter >= slides.length - 1) {
+
+    if (newRecipesWidth >= slideWidth * 1 && slideCounter === slides.length - 1) {
+      nextSlideButton.style.visibility = "hidden";
+    }
+    if (newRecipesWidth >= slideWidth * 2 && slideCounter === slides.length - 2) {
+      nextSlideButton.style.visibility = "hidden";
+    }
+
+    if (newRecipesWidth >= slideWidth * 3 && slideCounter === slides.length - 3) {
+      nextSlideButton.style.visibility = "hidden";
+    }
+
+    if (newRecipesWidth >= slideWidth * 4 && slideCounter === slides.length - 4) {
       nextSlideButton.style.visibility = "hidden";
     }
     console.log(slideCounter);
