@@ -48,6 +48,12 @@ h4 {
   font-size: 1rem;
 }
 
+p,
+button,
+input {
+  font-size: 1rem;
+}
+
 p {
   max-width: 500px;
   line-height: 1.5rem;
@@ -58,6 +64,7 @@ img {
 }
 
 .active,
+.active-category,
 li a:hover,
 .recipes-nav li:hover {
   font-weight: 700;

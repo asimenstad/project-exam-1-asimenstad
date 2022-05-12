@@ -18,6 +18,7 @@ const validMessage = document.querySelector("#valid-message");
 const invalidMessage = document.querySelector("#invalid-message");
 const errorMessage = document.querySelector("#error-message");
 
+/// Contact form
 fullName.addEventListener("blur", validateName);
 
 function validateName(event) {
@@ -78,6 +79,7 @@ function validateMessage(event) {
   }
 }
 
+/// Reg ex and length check
 function checkEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
   const patternMatch = regEx.test(email);

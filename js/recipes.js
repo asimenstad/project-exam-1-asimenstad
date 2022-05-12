@@ -1,18 +1,14 @@
 const recipesUrl =
   "https://annais.cool/projects/project-exam-api/wp-json/wp/v2/recipes?acf_format=standard&per_page=100&orderby=date";
-
 const loader = document.querySelector(".loader");
-
 const recipesContainer = document.querySelector(".recipes-container");
-
-const categoryAll = document.querySelector(".all");
-const categoryBreakfast = document.querySelector(".breakfast");
-const categoryLunch = document.querySelector(".lunch");
-const categoryDinner = document.querySelector(".dinner");
-const categoryDessert = document.querySelector(".dessert");
-const categorySide = document.querySelector(".side");
-
 const moreRecipes = document.querySelector(".more-recipes");
+const breakfast = document.querySelector(".breakfast");
+const lunch = document.querySelector(".lunch");
+const dinner = document.querySelector(".dinner");
+const dessert = document.querySelector(".dessert");
+const side = document.querySelector(".side");
+const all = document.querySelector(".all");
 
 let recipes = [];
 
@@ -20,23 +16,23 @@ async function fetchAPI() {
   try {
     const response = await fetch(recipesUrl);
     recipes = await response.json();
-    addRecipes(recipes);
+    displayAllRecipes(recipes);
   } catch (error) {
     console.log(error);
   }
 }
 fetchAPI();
 
-/// HTML
-function createHtml() {}
-
 /// Add all recipes
-function addRecipes(recipes) {
+function displayAllRecipes(recipes) {
+  recipesContainer.innerHTML = "";
+
   for (let i = 0; i < recipes.length; i++) {
+    loader.style.display = "none";
+
     if (i === 10) {
       break;
     }
-    loader.style.display = "none";
 
     if (recipes.length > 10) {
       moreRecipes.style.display = "block";
@@ -52,30 +48,54 @@ function addRecipes(recipes) {
   }
 }
 
-/// Add categories
-categoryBreakfast.addEventListener("click", addBreakfast);
-
-function addBreakfast() {
+/// HTML
+function createHtmlCategories(recipe) {
   recipesContainer.innerHTML = "";
-  for (let i = 0; i < recipes.length; i++) {
-    categoryAll.classList.remove("active");
-    categoryBreakfast.classList.add("active");
 
-    if (recipesContainer.childElementCount > 10) {
+  for (let i = 0; i < recipe.length; i++) {
+    console.log(recipe[i]);
+    console.log(recipe[i].acf.img);
+
+    loader.style.display = "none";
+
+    if (i === 10) {
+      break;
+    }
+
+    if (recipe.length > 10) {
       moreRecipes.style.display = "block";
     } else {
       moreRecipes.style.display = "none";
     }
 
-    if (recipes[i].acf.category === "breakfast") {
-      recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
-        <h3 class="recipe-title">${recipes[i].acf.title}</h3>
-        <h4 class="recipe-category">${recipes[i].acf.category}</h4>
-            <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
-                </div></a>`;
-      console.log((recipes[i].acf.category === "breakfast").length);
-    }
+    recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipe[i].id}"><div class="recipe">
+          <h3 class="recipe-title">${recipe[i].acf.title}</h3>
+          <h4 class="recipe-category">${recipe[i].acf.category}</h4>
+              <img src="${recipe[i].acf.image}" alt="${recipe[i].acf.alt}" class="recipe-image">
+                  </div></a>`;
   }
+}
+
+/// Categories
+all.addEventListener("click", displayAll);
+breakfast.addEventListener("click", displayCategory);
+lunch.addEventListener("click", displayCategory);
+dinner.addEventListener("click", displayCategory);
+dessert.addEventListener("click", displayCategory);
+side.addEventListener("click", displayCategory);
+
+function displayCategory(e) {
+  const category = e.target.className;
+  const filterCategory = recipes.filter((recipe) => recipe.acf.category === category);
+
+  const active = document.getElementsByClassName("active-category");
+  active[0].classList.remove("active-category");
+  e.target.classList.add("active-category");
+  createHtmlCategories(filterCategory);
+}
+
+function displayAll() {
+  window.location.reload();
 }
 
 /// View more recipes
