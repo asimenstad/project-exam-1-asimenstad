@@ -15,7 +15,6 @@
 a {
   color: #000;
   text-decoration: none;
-  transition: 0.2s ease-in-out;
 }
 
 li {
@@ -68,6 +67,14 @@ img {
 li a:hover,
 .recipes-nav li:hover {
   font-weight: 700;
+}
+
+a,
+.recipe,
+.recipes-nav button,
+.cta,
+.social-media i {
+  transition: 0.2s ease-in-out;
 }
 
 /* Nav */
@@ -152,7 +159,6 @@ main {
 .recipe {
   display: flex;
   flex-direction: column;
-  transition: 0.2s ease-in-out;
 }
 
 .recipe:hover > .recipe-title {
@@ -243,7 +249,6 @@ textarea,
   color: #fff;
   text-transform: uppercase;
   padding-inline: 50px;
-  transition: 0.2s ease-in-out;
 }
 
 .cta:hover {
@@ -309,7 +314,6 @@ footer {
 
 .social-media i {
   font-size: 35px;
-  transition: 0.2s ease-in-out;
 }
 
 .social-media i:hover {
