@@ -233,6 +233,7 @@ main {
 button {
   cursor: pointer;
   background-color: #fff;
+  color: #000;
   border: none;
 }
 
