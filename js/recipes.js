@@ -48,14 +48,11 @@ function displayAllRecipes(recipes) {
   }
 }
 
-/// HTML
-function createHtmlCategories(recipe) {
+/// Add categories
+function displayCategories(recipe) {
   recipesContainer.innerHTML = "";
 
   for (let i = 0; i < recipe.length; i++) {
-    console.log(recipe[i]);
-    console.log(recipe[i].acf.img);
-
     loader.style.display = "none";
 
     if (i === 10) {
@@ -78,20 +75,20 @@ function createHtmlCategories(recipe) {
 
 /// Categories
 all.addEventListener("click", displayAll);
-breakfast.addEventListener("click", displayCategory);
-lunch.addEventListener("click", displayCategory);
-dinner.addEventListener("click", displayCategory);
-dessert.addEventListener("click", displayCategory);
-side.addEventListener("click", displayCategory);
+breakfast.addEventListener("click", findCategory);
+lunch.addEventListener("click", findCategory);
+dinner.addEventListener("click", findCategory);
+dessert.addEventListener("click", findCategory);
+side.addEventListener("click", findCategory);
 
-function displayCategory(e) {
+function findCategory(e) {
   const category = e.target.className;
   const filterCategory = recipes.filter((recipe) => recipe.acf.category === category);
 
   const active = document.getElementsByClassName("active-category");
   active[0].classList.remove("active-category");
   e.target.classList.add("active-category");
-  createHtmlCategories(filterCategory);
+  displayCategories(filterCategory);
 }
 
 function displayAll() {

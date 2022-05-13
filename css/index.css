@@ -18,8 +18,12 @@ h1 {
   overflow: hidden;
 }
 
-.new-recipes-container {
+.new-recipes-container,
+.carousel-nav {
   display: flex;
+}
+
+.new-recipes-container {
   gap: 10px;
   margin-top: 10px;
 }
@@ -30,7 +34,6 @@ h1 {
 }
 
 .carousel-nav {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -55,20 +58,19 @@ h1 {
 }
 
 /* Weekly recipe */
-.weekly-recipe {
+.weekly-recipe,
+.weekly-recipe-info {
   display: flex;
   flex-direction: column;
+}
+
+.weekly-recipe {
   background-color: var(--beige);
   padding: 40px 20px;
   margin: 40px -20px 0 -20px;
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
-
-.weekly-recipe-info {
-  display: flex;
-  flex-direction: column;
 }
 
 .weekly-recipe h2 {
@@ -94,4 +96,10 @@ h1 {
 
 .weekly-recipe-img {
   max-width: 500px;
+}
+
+/* Popular recipes */
+
+.popular-recipes {
+  margin-block: 20px;
 }

@@ -10,7 +10,6 @@ const previousSlideButton = document.querySelector(".previous-slide");
 const nextSlideButton = document.querySelector(".next-slide");
 const weeklyRecipe = document.querySelector(".weekly-recipe");
 const newRecipesWidth = newRecipes.getBoundingClientRect().width;
-console.log(newRecipesWidth);
 
 async function fetchAPI() {
   try {
@@ -44,7 +43,6 @@ function createCarousel(recipes) {
 function nextSlide() {
   const slides = document.querySelectorAll(".recipe");
   const slideWidth = slides[0].getBoundingClientRect().width;
-  console.log(slideWidth);
 
   slideCounter++;
   for (i = 0; i < slides.length; i++) {
@@ -67,7 +65,6 @@ function nextSlide() {
     if (newRecipesWidth >= slideWidth * 4 && slideCounter === slides.length - 4) {
       nextSlideButton.style.visibility = "hidden";
     }
-    console.log(slideCounter);
   }
 }
 nextSlideButton.addEventListener("click", nextSlide);
@@ -85,7 +82,6 @@ function previousSlide() {
     if (slideCounter < slides.length) {
       nextSlideButton.style.visibility = "visible";
     }
-    console.log(slideCounter);
   }
 }
 previousSlideButton.addEventListener("click", previousSlide);
