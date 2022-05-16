@@ -41,7 +41,7 @@ main h2 {
 
 .img {
   display: flex;
-  cursor: pointer;
+  cursor: zoom-in;
   transition: 0.2s ease-in-out;
   order: 2;
 }
@@ -75,7 +75,7 @@ main h2 {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  cursor: pointer;
+  cursor: zoom-out;
   display: none;
 }
 
