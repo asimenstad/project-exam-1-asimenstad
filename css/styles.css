@@ -290,7 +290,8 @@ footer,
   gap: 10px;
 }
 
-.newsletter-form label {
+.newsletter-form label,
+.search label {
   height: 1px;
   margin: -1px;
   overflow: hidden;

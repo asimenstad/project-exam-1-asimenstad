@@ -101,4 +101,13 @@
   .recipes-container {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .search {
+    align-self: flex-end;
+    position: absolute;
+  }
+
+  .recipes-nav {
+    margin-top: 5px;
+  }
 }

@@ -1,16 +1,19 @@
+.recipes,
 .recipes-nav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .recipes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.recipes-nav {
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .more-recipes {
@@ -21,4 +24,18 @@
 
 .recipes-nav button:hover {
   font-weight: 700;
+}
+
+.search {
+  align-self: center;
+}
+
+.search-submit {
+  color: #fff;
+  background-color: #000;
+  padding-inline: 10px;
+}
+
+.hide-recipes {
+  display: none;
 }

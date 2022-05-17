@@ -46,6 +46,7 @@
     <main>
       <h1>Our recipes</h1>
       <section class="recipes">
+        
         <ul class="recipes-nav">
           <li><button class="all active-category">All</button></li>
           <li><button class="breakfast">Breakfast</button></li>
@@ -54,6 +55,12 @@
           <li><button class="dessert">Dessert</button></li>
           <li><button class="side">Side</button></li>
         </ul>
+        <form action="" class="search">
+          <label for="search-input">Search recipes</label>
+          <input type="search" name="search" class="search-input" id="search-input" placeholder="Search recipes" />
+          <button type="submit" id="submit" class="search-submit cta"><i class="fa-solid fa-magnifying-glass"></i></i></button>
+        </form>
+       
         <div class="loader">
           <div></div>
           <div></div>
