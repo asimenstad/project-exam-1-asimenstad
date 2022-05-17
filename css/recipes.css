@@ -28,6 +28,7 @@
 
 .search {
   align-self: center;
+  background-color: transparent;
 }
 
 .search-submit {
