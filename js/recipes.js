@@ -95,6 +95,38 @@ function displayAll() {
   window.location.reload();
 }
 
+/// Search
+
+const searchForm = document.querySelector(".search");
+const searchInput = document.querySelector("#search-input");
+
+searchForm.addEventListener("submit", filterSearch);
+
+function filterSearch(e) {
+  e.preventDefault();
+  recipesContainer.innerHTML = "";
+  for (let i = 0; i < recipes.length; i++) {
+    const recipeValue = recipes[i].acf.title.toLowerCase();
+    const recipeFilter = searchInput.value.toLowerCase();
+    const searchResult = recipeValue.includes(recipeFilter);
+
+    if (searchResult) {
+      console.log(searchResult);
+      console.log(recipes[i]);
+
+      recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
+      <h3 class="recipe-title">${recipes[i].acf.title}</h3>
+      <h4 class="recipe-category">${recipes[i].acf.category}</h4>
+          <img src="${recipes[i].acf.image}" alt"${recipes[i].acf.alt}" class="recipe-image">
+              </div></a>`;
+    } else {
+      recipesContainer.innerHTML = `<p class="recipe-error">Sorry, no recipes was found.</p>`;
+    }
+
+    moreRecipes.style.display = "none";
+  }
+}
+
 /// View more recipes
 moreRecipes.addEventListener("click", loadMore);
 
@@ -107,7 +139,7 @@ function loadMore() {
     recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
                 <h3 class="recipe-title">${recipes[i].acf.title}</h3>
                 <h4 class="recipe-category">${recipes[i].acf.category}</h4>
-                    <img src="${recipes[i].acf.image}" alt"" class="recipe-image">
+                    <img src="${recipes[i].acf.image}" alt"${recipes[i].acf.alt}" class="recipe-image">
                         </div></a>`;
 
     moreRecipes.style.display = "none";
