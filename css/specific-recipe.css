@@ -64,10 +64,6 @@ main h2 {
   max-width: 600px;
 }
 
-br {
-  margin-bottom: 10px;
-}
-
 /* Image modal */
 .modal {
   position: fixed;
