@@ -242,6 +242,7 @@ textarea,
 .cta,
 .search {
   border: 1px solid #000;
+  background-color: #fff;
   padding: 5px;
   border-radius: 2px;
 }

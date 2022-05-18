@@ -36,6 +36,10 @@
   padding: 0;
 }
 
+.search input::-webkit-search-decoration {
+  display: none;
+}
+
 .hide-recipes {
   display: none;
 }
