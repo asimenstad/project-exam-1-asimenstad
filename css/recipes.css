@@ -31,10 +31,9 @@
   background-color: transparent;
 }
 
-.search-submit {
-  color: #fff;
-  background-color: #000;
-  padding-inline: 10px;
+.search input {
+  border: none;
+  padding: 0;
 }
 
 .hide-recipes {
