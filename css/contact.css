@@ -58,13 +58,14 @@ main textarea {
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
+  text-align: center;
   z-index: 1000;
   display: none;
 }
 
 .form-success {
   background-color: #fff;
-  padding: 30px;
+  padding: 50px;
   flex-direction: column;
   position: relative;
   border-radius: 2px;
