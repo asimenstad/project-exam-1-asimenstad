@@ -1,3 +1,7 @@
+const form = document.querySelector(".contact-form");
+const formSuccess = document.querySelector(".form-success__container");
+const closeSuccess = document.querySelector(".close-modal");
+
 const fullName = document.querySelector("#name");
 const validName = document.querySelector("#valid-name");
 const invalidName = document.querySelector("#invalid-name");
@@ -92,4 +96,19 @@ function checkLength(value, length) {
   } else {
     return false;
   }
+}
+
+/// Contact form success
+form.addEventListener("submit", submitSuccess);
+
+function submitSuccess(e) {
+  e.preventDefault();
+  formSuccess.style.display = "flex";
+}
+
+closeSuccess.addEventListener("click", closeModal);
+
+function closeModal() {
+  formSuccess.style.display = "none";
+  window.location.reload();
 }

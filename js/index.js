@@ -106,19 +106,3 @@ function createWeeklyRecipe(recipes) {
     }
   }
 }
-
-/// Popular recipes
-
-const popularRecipesUrl =
-  "https://annais.cool/projects/project-exam-api/wp-json/wordpress-popular-posts/v1/popular-posts/";
-
-async function fetchPopularRecipes() {
-  try {
-    const response = await fetch(popularRecipesUrl);
-    const popularRecipes = await response.json();
-    console.log(popularRecipes);
-  } catch (error) {
-    console.log(error);
-  }
-}
-fetchPopularRecipes();

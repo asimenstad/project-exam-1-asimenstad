@@ -42,3 +42,54 @@ main textarea {
 .valid-input {
   display: none;
 }
+
+/* Form success */
+.form-success__container,
+.form-success {
+  display: flex;
+  align-items: center;
+}
+
+.form-success__container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.form-success {
+  background-color: #fff;
+  padding: 30px;
+  flex-direction: column;
+  position: relative;
+  border-radius: 2px;
+}
+
+.close-modal {
+  order: 1;
+  font-size: 25px;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  right: 0;
+  top: 0;
+  padding-inline: 10px;
+  border-top-right-radius: 2px;
+}
+
+.close-modal:hover {
+  background-color: var(--gray);
+}
+
+.form-success h2 {
+  order: 2;
+}
+
+.form-success p {
+  order: 3;
+}

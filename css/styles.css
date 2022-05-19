@@ -49,7 +49,8 @@ h4 {
 
 p,
 button,
-input {
+input,
+textarea {
   font-size: 1rem;
 }
 
@@ -73,7 +74,8 @@ a,
 .recipe,
 .recipes-nav button,
 .cta,
-.social-media i {
+.social-media i,
+.close-modal {
   transition: 0.2s ease-in-out;
 }
 
