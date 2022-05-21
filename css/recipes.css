@@ -43,3 +43,8 @@
 .hide-recipes {
   display: none;
 }
+
+.recipe-error {
+  grid-column-start: span 4;
+  margin-top: 20px;
+}
