@@ -86,9 +86,14 @@ function findCategory(e) {
   const filterCategory = recipes.filter((recipe) => recipe.acf.category === category);
 
   const active = document.getElementsByClassName("active-category");
-  active[0].classList.remove("active-category");
-  e.target.classList.add("active-category");
-  displayCategories(filterCategory);
+
+  if (e.target.className !== active) {
+    active[0].classList.remove("active-category");
+    e.target.classList.add("active-category");
+  }
+  if (filterCategory.length > 0) {
+    displayCategories(filterCategory);
+  }
 }
 
 function displayAll() {

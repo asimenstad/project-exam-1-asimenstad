@@ -22,6 +22,7 @@ async function fetchSpecificRecipe() {
 }
 fetchSpecificRecipe();
 
+/// Add html
 function createRecipeHTML(recipe) {
   loader.style.display = "none";
 

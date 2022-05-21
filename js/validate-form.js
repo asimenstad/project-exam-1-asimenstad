@@ -110,5 +110,6 @@ closeSuccess.addEventListener("click", closeModal);
 
 function closeModal() {
   formSuccess.style.display = "none";
+  form.reset();
   window.location.reload();
 }
