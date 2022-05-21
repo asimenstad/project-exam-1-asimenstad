@@ -48,22 +48,24 @@ function nextSlide() {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.transform += `translateX(-${slideWidth + 10}px)`;
     if (slideCounter > 0) {
-      previousSlideButton.style.visibility = "visible";
+      previousSlideButton.style.display = "flex";
     }
 
+    console.log(slideCounter);
+
     if (newRecipesWidth >= slideWidth * 1 && slideCounter === slides.length - 1) {
-      nextSlideButton.style.visibility = "hidden";
+      nextSlideButton.style.display = "none";
     }
     if (newRecipesWidth >= slideWidth * 2 && slideCounter === slides.length - 2) {
-      nextSlideButton.style.visibility = "hidden";
+      nextSlideButton.style.display = "none";
     }
 
     if (newRecipesWidth >= slideWidth * 3 && slideCounter === slides.length - 3) {
-      nextSlideButton.style.visibility = "hidden";
+      nextSlideButton.style.display = "none";
     }
 
     if (newRecipesWidth >= slideWidth * 4 && slideCounter === slides.length - 4) {
-      nextSlideButton.style.visibility = "hidden";
+      nextSlideButton.style.display = "none";
     }
   }
 }
@@ -76,11 +78,11 @@ function previousSlide() {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.transform += `translateX(${slideWidth}px)`;
     if (slideCounter === 0) {
-      previousSlideButton.style.visibility = "hidden";
+      previousSlideButton.style.display = "none";
     }
 
     if (slideCounter < slides.length) {
-      nextSlideButton.style.visibility = "visible";
+      nextSlideButton.style.display = "flex";
     }
   }
 }

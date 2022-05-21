@@ -54,7 +54,7 @@ h1 {
 }
 
 .previous-slide {
-  visibility: hidden;
+  display: none;
 }
 
 /* Weekly recipe */
