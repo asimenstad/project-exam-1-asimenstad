@@ -118,16 +118,12 @@ function filterSearch(e) {
     if (searchResult) {
       console.log(searchResult);
       console.log(recipes[i]);
-      console.log(recipesContainer.innerHTML);
 
       recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
       <h3 class="recipe-title">${recipes[i].acf.title}</h3>
       <h4 class="recipe-category">${recipes[i].acf.category}</h4>
           <img src="${recipes[i].acf.image}" alt"${recipes[i].acf.alt}" class="recipe-image">
               </div></a>`;
-    } else {
-      console.error();
-      recipesContainer.innerHTML = `<p class="recipe-error">Sorry, no recipe was found :( </p>`;
     }
 
     moreRecipes.style.display = "none";
