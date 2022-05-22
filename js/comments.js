@@ -51,7 +51,12 @@ fetchComments();
 
 function displayComments(comments) {
   commentAmount.innerHTML = `(${comments.length})`;
+  console.log(comments.date);
+
   for (let i = 0; i < comments.length; i++) {
-    commentsContainer.innerHTML += `<div class="comment-specific"><h3><span class="comment-author">${comments[i].author_name}</span> says</h3><p class="comment-date">${comments[i].date}</p>${comments[i].content.rendered}</div><hr>`;
+    const date = comments[i].date;
+    const splitComment = date.split("T");
+    const commentDate = splitComment.join(`, kl `);
+    commentsContainer.innerHTML += `<div class="comment-specific"><h3><span class="comment-author">${comments[i].author_name}</span> says</h3><p class="comment-date">${commentDate}</p>${comments[i].content.rendered}</div><hr>`;
   }
 }

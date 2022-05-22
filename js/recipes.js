@@ -117,7 +117,6 @@ function filterSearch(e) {
 
     if (searchResult) {
       console.log(searchResult);
-      console.log(recipes[i]);
 
       recipesContainer.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe">
       <h3 class="recipe-title">${recipes[i].acf.title}</h3>
