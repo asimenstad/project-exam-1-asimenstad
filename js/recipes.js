@@ -127,7 +127,7 @@ function filterSearch(e) {
               </div></a>`;
     } else {
       console.error();
-      recipesContainer.innerHTML = `<p class="recipe-error">Sorry, no recipes was found.</p>`;
+      recipesContainer.innerHTML = `<p class="recipe-error">Sorry, no recipe was found :( </p>`;
     }
 
     moreRecipes.style.display = "none";
