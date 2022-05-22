@@ -179,6 +179,7 @@ main {
 
 .recipe-title {
   order: 2;
+  text-transform: capitalize;
 }
 
 .recipe-category {

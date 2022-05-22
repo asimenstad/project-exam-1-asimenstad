@@ -73,7 +73,6 @@ function displayCategories(recipe) {
   }
 }
 
-/// Categories
 all.addEventListener("click", displayAll);
 breakfast.addEventListener("click", findCategory);
 lunch.addEventListener("click", findCategory);
