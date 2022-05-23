@@ -53,6 +53,10 @@ function nextSlide() {
 
     console.log(slideCounter);
 
+    if (newRecipesWidth <= slideWidth * 1 && slideCounter === slides.length - 1) {
+      nextSlideButton.style.display = "none";
+    }
+
     if (newRecipesWidth >= slideWidth * 1 && slideCounter === slides.length - 1) {
       nextSlideButton.style.display = "none";
     }
