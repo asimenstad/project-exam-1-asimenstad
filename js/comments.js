@@ -56,7 +56,7 @@ function displayComments(comments) {
   for (let i = 0; i < comments.length; i++) {
     const date = comments[i].date;
     const splitComment = date.split("T");
-    const commentDate = splitComment.join(`, kl `);
+    const commentDate = splitComment.join(` at `);
     commentsContainer.innerHTML += `<div class="comment-specific"><h3><span class="comment-author">${comments[i].author_name}</span> says</h3><p class="comment-date">${commentDate}</p>${comments[i].content.rendered}</div><hr>`;
   }
 }
