@@ -5,11 +5,12 @@ let recipes = [];
 let slideCounter = 0;
 
 const loader = document.querySelector(".loader");
+const recommendedRecipesLoader = document.querySelector(".recommended-recipes .loader");
 const newRecipes = document.querySelector(".new-recipes-container");
 const previousSlideButton = document.querySelector(".previous-slide");
 const nextSlideButton = document.querySelector(".next-slide");
 const weeklyRecipe = document.querySelector(".weekly-recipe");
-const newRecipesWidth = newRecipes.getBoundingClientRect().width;
+const recommendedRecipes = document.querySelector(".recommended-recipes");
 
 async function fetchAPI() {
   try {
@@ -17,8 +18,9 @@ async function fetchAPI() {
     recipes = await response.json();
     createCarousel(recipes);
     createWeeklyRecipe(recipes);
+    createRecommendedRecipes(recipes);
   } catch (error) {
-    console.log(error);
+    console.log("Error:", error);
   }
 }
 fetchAPI();
@@ -32,7 +34,7 @@ function createCarousel(recipes) {
 
     loader.style.display = "none";
 
-    newRecipes.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe" >
+    newRecipes.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe new" >
       <h3 class="recipe-title">${recipes[i].acf.title}</h3>
       <h4 class="recipe-category">${recipes[i].acf.category}</h4>
           <img src="${recipes[i].acf.image}" alt="${recipes[i].acf.alt}" class="recipe-image">
@@ -40,8 +42,10 @@ function createCarousel(recipes) {
   }
 }
 
+const newRecipesWidth = newRecipes.getBoundingClientRect().width;
+
 function nextSlide() {
-  const slides = document.querySelectorAll(".recipe");
+  const slides = document.querySelectorAll(".recipe.new");
   const slideWidth = slides[0].getBoundingClientRect().width;
 
   slideCounter++;
@@ -93,7 +97,6 @@ function previousSlide() {
 previousSlideButton.addEventListener("click", previousSlide);
 
 /// Weekly recipe
-
 function createWeeklyRecipe(recipes) {
   for (let i = 0; i < recipes.length; i++) {
     if (recipes.length < 1) {
@@ -109,6 +112,21 @@ function createWeeklyRecipe(recipes) {
       <div class="weekly-recipe-img">
       <img src="${recipes[i].acf.image}" alt="${recipes[i].acf.alt}">
       </div>`;
+    }
+  }
+}
+
+/// Recommended recipes
+function createRecommendedRecipes() {
+  for (let i = 0; i < recipes.length; i++) {
+    if (recipes[i].acf.recommended) {
+      recommendedRecipesLoader.style.display = "none";
+
+      recommendedRecipes.innerHTML += `<a href="specific-recipe.html?id=${recipes[i].id}"><div class="recipe" >
+      <h3 class="recipe-title">${recipes[i].acf.title}</h3>
+      <h4 class="recipe-category">${recipes[i].acf.category}</h4>
+          <img src="${recipes[i].acf.image}" alt="${recipes[i].acf.alt}" class="recipe-image">
+              </div></a>`;
     }
   }
 }

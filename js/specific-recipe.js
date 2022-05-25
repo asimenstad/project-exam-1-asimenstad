@@ -17,7 +17,7 @@ async function fetchSpecificRecipe() {
     recipe = await response.json();
     createRecipeHTML(recipe);
   } catch (error) {
-    console.log("error");
+    console.log("Error", error);
   }
 }
 fetchSpecificRecipe();

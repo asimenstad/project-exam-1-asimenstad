@@ -32,7 +32,9 @@ function addComment(e) {
       window.location.reload();
       return response.json();
     })
-    .then((object) => {})
+    .then((object) => {
+      console.log("Error:", object.message);
+    })
     .catch((error) => console.log("Error:", error));
 }
 
@@ -51,7 +53,6 @@ fetchComments();
 
 function displayComments(comments) {
   commentAmount.innerHTML = `(${comments.length})`;
-  console.log(comments.date);
 
   for (let i = 0; i < comments.length; i++) {
     const date = comments[i].date;

@@ -18,7 +18,7 @@ async function fetchAPI() {
     recipes = await response.json();
     displayAllRecipes(recipes);
   } catch (error) {
-    console.log(error);
+    console.log("Error:", error);
   }
 }
 fetchAPI();

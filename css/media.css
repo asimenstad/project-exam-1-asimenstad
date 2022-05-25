@@ -1,6 +1,11 @@
 @media screen and (min-width: 600px) {
+  .recommended-recipes,
   .recipes-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .recommended-recipes h2 {
+    grid-column: span 2;
   }
 
   .specific-recipe__section.ingredients {
@@ -98,8 +103,13 @@
     text-align: left;
   }
 
+  .recommended-recipes,
   .recipes-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .recommended-recipes h2 {
+    grid-column: span 4;
   }
 
   .search {

@@ -9,14 +9,13 @@ async function fetchAbout() {
     const json = await response.json();
     createAboutHtml(json);
   } catch (error) {
-    console.log("error");
+    console.log("Error:", error);
   }
 }
 fetchAbout();
 
 function createAboutHtml(about) {
   loader.style.display = "none";
-  console.log(about);
   aboutTextContainer.innerHTML = `<h2>${about[0].title.rendered}</h2><p>${about[0].content.rendered}</p>`;
   aboutImageContainer.innerHTML = `<img src="${about[0].acf.image}" alt="${about[0].acf.alt}">`;
 }

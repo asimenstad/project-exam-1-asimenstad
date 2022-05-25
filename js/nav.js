@@ -17,5 +17,3 @@ function toggleMenu() {
 }
 
 menuButton.addEventListener("click", toggleMenu);
-
-function toggleDropdown() {}
