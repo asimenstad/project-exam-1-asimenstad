@@ -80,7 +80,7 @@ function nextSlide() {
 nextSlideButton.addEventListener("click", nextSlide);
 
 function previousSlide() {
-  const slides = document.querySelectorAll(".recipe");
+  const slides = document.querySelectorAll(".recipe.new");
   const slideWidth = slides[0].getBoundingClientRect().width + 10;
   slideCounter--;
   for (i = 0; i < slides.length; i++) {
