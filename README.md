@@ -1,6 +1,6 @@
 # Miso Hungry
 
-![Screenshot of Miso Hungry](/assets/site-screenshot.jpg)
+![Screenshot of Miso Hungry](/assets/site-screenshot.png)
 
 A food blog.
 
