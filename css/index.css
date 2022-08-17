@@ -16,6 +16,8 @@ h1 {
   max-width: 1190px;
   margin: auto;
   overflow: hidden;
+  overflow-x: scroll;
+  overscroll-behavior-inline: contain;
 }
 
 .new-recipes-container,
@@ -96,6 +98,11 @@ h1 {
 
 .weekly-recipe-img {
   max-width: 500px;
+}
+
+.weekly-recipe-img img {
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
 }
 
 /* Popular recipes */
