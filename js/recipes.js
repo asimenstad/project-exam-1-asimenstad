@@ -105,6 +105,7 @@ const searchForm = document.querySelector(".search");
 const searchInput = document.querySelector("#search-input");
 
 searchForm.addEventListener("submit", filterSearch);
+searchInput.addEventListener("input", filterSearch);
 
 function filterSearch(e) {
   e.preventDefault();
